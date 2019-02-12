@@ -14,3 +14,11 @@ Example project to deploy an AWS architecture with Terraform
   ```console
   root@domain:/home/user# apt-get update
   ```
+* Install Python Pip
+  ```console
+  root@domain:/home/user# apt install python-pip
+  ```
+* Upgrade Python Pip
+  ```console
+  root@domain:/home/user# pip install --upgrade pip
+  ```
