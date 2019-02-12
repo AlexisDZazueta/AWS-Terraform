@@ -14,36 +14,36 @@ resource "aws_iam_role_policy" "s3_access_policy" {
   name = "s3_access_policy"
   role = "${aws_iam_role.s3_access_role.id}"
   policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Action": "s3:*",
-        "Resource": "*"
-      }
-    ]
-  }
-  EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": "*"
+    }
+  ]
+}
+EOF
 }
 
 resource "aws_iam_role" "s3_access_role" {
   name = "s3_access_role"
   assume_role_policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Action": "sts:AssumeRole",
-        "Principal": {
-          "Service": "ec2.amazonaws.com"
-        },
-        "Effect": "Allow",
-        "Sid": ""
-      }
-    ]
-  }
-  EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
 }
 
 #--------- VPC --------
@@ -295,17 +295,17 @@ resource "aws_vpc_endpoint" "wp_private-s3_endpoint" {
     "${aws_route_table.wp_public_rt.id}"
   ]
   policy = <<POLICY
-  {
-    "Statement": [
-      {
-        "Action": "*",
-        "Effect": "Allow",
-        "Resource": "*",
-        "Principal": "*"
-      }
-    ]
-  }
-  POLICY
+{
+  "Statement": [
+    {
+      "Action": "*",
+      "Effect": "Allow",
+      "Resource": "*",
+      "Principal": "*"
+    }
+  ]
+}
+POLICY
 }
 
 #-------- S3 Code Bucket --------
