@@ -75,4 +75,4 @@ Example project to deploy an AWS architecture with Terraform
   (Save the response of this command, for example in an file with "vim route53")
   ```
 * Edit your domain in AWS Console to change the Name Servers to the Name Servers of the last command, then check that the name servers of the hosted zone was changed
-* Make a git clone of this repository and let's begin with the project
+* Make a git clone of this repository, make a file named "terraform.tfvars" to set your variables and let's begin with the project
