@@ -17,9 +17,11 @@ resource "aws_iam_role_policy" "s3_access_policy" {
   {
     "Version": "2012-10-17",
     "Statement": [
-      "Effect": "Allow",
-      "Action": "s3:*",
-      "Resource": "*"
+      {
+        "Effect": "Allow",
+        "Action": "s3:*",
+        "Resource": "*"
+      }
     ]
   }
   EOF
@@ -295,10 +297,12 @@ resource "aws_vpc_endpoint" "wp_private-s3_endpoint" {
   policy = <<POLICY
   {
     "Statement": [
-      "Action": "*",
-      "Effect": "Allow",
-      "Resource": "*",
-      "Principal": "*"
+      {
+        "Action": "*",
+        "Effect": "Allow",
+        "Resource": "*",
+        "Principal": "*"
+      }
     ]
   }
   POLICY
