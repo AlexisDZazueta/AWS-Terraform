@@ -8,9 +8,9 @@ Example project to deploy an AWS architecture with Terraform
   ```
 * Check that Python was intalled
   ```console
-  root@domain:~$ python --version
+  root@domain:/home/user# python --version
   ```
 * Make an update
   ```console
-  root@domain:~$ apt-get update
+  root@domain:/home/user# apt-get update
   ```
