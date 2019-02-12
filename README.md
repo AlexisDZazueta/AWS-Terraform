@@ -59,10 +59,30 @@ Example project to deploy an AWS architecture with Terraform
 * Edit the ansible.cfg file
   ```console
   root@domain:/home/user# vim /etc/ansible/ansible.cfg
-  (Uncomment the "#host_key_cheking = false" line)
+  (Uncomment the "#host_key_checking = false" line)
   ```
 * Make the project folder
   ```console
   root@domain:/home/user# mkdir terransible
   root@domain:/home/user# cd terransible
   ```
+* Add an user in AWS IAM and download the credentials.csv
+* Prepare a domain (if you not have one, buy it preferably in AWS Route53)
+* Configure the AWS CLI with a profile
+  ```console
+  root@domain:/home/user/terransible# aws configure --profile {profilename}
+  AWS Access Key ID [****ABCD]: {Access Key ID from credentials.csv}
+  AWS Secret Access Key [****1a2b]: {Secret Access Key from credentials.csv}
+  Default region name [us-east-1]: {Region from your project}
+  Default output format [None]:
+  root@domain:/home/user/terransible# aws ec2 describe-instances --profile {profilename}
+  root@domain:/home/user/terransible# aws route53 create-reusable-delegation-set --caller-reference 1234 --profile {profilename}
+  (Save the response of this command, for example in an file with "vim route53")
+  ```
+* Edit your domain in AWS Console to change the Name Servers to the Name Servers of the last command, then check that the name servers of the hosted zone was changed.
+* Create the files of the project
+  ```console
+  root@comain:/home/user/terransible# touch main.tf terraform.tfvars variables.tf
+  root@comain:/home/user/terransible# touch userdata aws_hosts wordpress.yml s3update.yml
+  ```
+* Let's begin with the project
