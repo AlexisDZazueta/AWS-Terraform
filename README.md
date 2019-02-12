@@ -1,4 +1,4 @@
-# AWS-Terraform
+# AWS Terraform
 Example project to deploy an AWS architecture with Terraform
 
 ## Steps to make a Terraform / Ansible instalation for AWS
