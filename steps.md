@@ -1,1 +1,0 @@
-# Steps to make a Terraform / Ansible instalation for AWS
