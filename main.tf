@@ -354,8 +354,8 @@ resource "aws_elb" "wp_elb" {
     lb_protocol = "http"
   }
   health_check {
-    healthy_threshold = "${var.elb_healthy_threshold}"
-    unhealthy_threshold = "${var.elb_unhealthy_threshold}"
+    healthy_threshold = "${var.elb_healthy_threashold}"
+    unhealthy_threshold = "${var.elb_unhealthy_threashold}"
     timeout = "${var.elb_timeout}"
     target = "TCP:80"
     interval = "${var.elb_interval}"
