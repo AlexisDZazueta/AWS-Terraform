@@ -433,7 +433,7 @@ resource "aws_launch_configuration" "wp_lc" {
   security_groups = ["${aws_security_group.wp_private_sg.id}"]
   iam_instance_profile = "${aws_iam_instance_profile.s3_access_profile.id}"
   key_name = "${aws_key_pair.wp_auth.id}"
-  user_data = "${file("userdata")}"
+  user_data_base64 = "${file("userdata")}"
   lifecycle {
     create_before_destroy = true
 
