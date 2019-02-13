@@ -21,6 +21,7 @@ asg_grace                = "300"
 asg_hct                  = "EC2"
 asg_cap                  = "2"
 lc_instance_type         = "t2.micro"
+delegation_set           = "N39QHJJATYHL2I"
 cidrs = {
   public1  = "10.0.1.0/24"
   public2  = "10.0.2.0/24"
