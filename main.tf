@@ -475,7 +475,9 @@ resource "aws_route53_zone" "primary_zone" {
 
 resource "aws_route53_zone" "secondary_zone" {
   name = "${var.domain_name}.com"
-  vpc_id = "${aws_vpc.wp_vpc.id}"
+  vpc {
+    vpc_id = "${aws_vpc.wp_vpc.id}"
+  }
 }
 
 resource "aws_route53_record" "www" {
