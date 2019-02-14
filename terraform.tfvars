@@ -1,7 +1,7 @@
 aws_profile              = "linuxacademy"
 aws_region               = "us-west-2"
 vpc_cidr                 = "10.0.0.0/16"
-localip                  = "18.222.114.249/32"
+localip                  = "52.14.133.134/32"
 domain_name              = "azazueta"
 db_instance_class        = "db.t2.micro"
 dbname                   = "linuxacademydb"
